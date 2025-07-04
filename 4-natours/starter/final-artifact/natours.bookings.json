@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "68662d831bb527eefe4b5cb8"
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2966"
+  },
+  "user": {
+    "$oid": "6865a2a6628e82e5da3d8440"
+  },
+  "price": 2997,
+  "createdAt": {
+    "$date": "2025-07-03T07:05:58.764Z"
+  },
+  "paid": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6866c1c8229ef5eb28d7d6fd"
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2951"
+  },
+  "user": {
+    "$oid": "5c8a23c82f8fb814b56fa18d"
+  },
+  "price": 397,
+  "createdAt": {
+    "$date": "2025-07-03T17:41:03.585Z"
+  },
+  "paid": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6866c1ea229ef5eb28d7d73b"
+  },
+  "tour": {
+    "$oid": "5c88fa8cf4afda39709c2951"
+  },
+  "user": {
+    "$oid": "5c8a23c82f8fb814b56fa18d"
+  },
+  "price": 397,
+  "createdAt": {
+    "$date": "2025-07-03T17:41:03.585Z"
+  },
+  "paid": true,
+  "__v": 0
+}]
