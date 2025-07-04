@@ -1,30 +1,34 @@
-const fs = require('fs');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const Tour = require('./../../models/tourModel');
-const Review = require('./../../models/reviewModel');
-const User = require('./../../models/userModel');
-
-dotenv.config({ path: './.env' });
+import fs from 'fs';
+import mongoose from 'mongoose';
+import 'dotenv/config';
+import Tour from '../../models/tourModel.js';
+import User from '../../models/userModel.js';
+import Review from '../../models/reviewModel.js';
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
+  process.env.DATABASE_PASSWORD,
 );
 
 mongoose
   .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
+    // useNewUrlParser: true,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
   })
-  .then(() => console.log('DB connection successful!'));
+  .then(() => {
+    console.log('DB connection successful!');
+  });
 
 // READ JSON FILE
-const tours = JSON.parse(fs.readFileSync(`${__dirname}/tours.json`, 'utf-8'));
-const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, 'utf-8'));
+const tours = JSON.parse(
+  fs.readFileSync('./dev-data/data/tours.json', 'utf-8'),
+);
+const users = JSON.parse(
+  fs.readFileSync('./dev-data/data/users.json', 'utf-8'),
+);
 const reviews = JSON.parse(
-  fs.readFileSync(`${__dirname}/reviews.json`, 'utf-8')
+  fs.readFileSync('./dev-data/data/reviews.json', 'utf-8'),
 );
 
 // IMPORT DATA INTO DB
@@ -58,3 +62,5 @@ if (process.argv[2] === '--import') {
 } else if (process.argv[2] === '--delete') {
   deleteData();
 }
+
+console.log(process.argv);
